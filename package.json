@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code-2017",
+  "description": "JS solutions to http://adventofcode.com/2017",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mraxus/advent-of-code-2017.git"
+  },
+  "author": "mraxus",
+  "bugs": {
+    "url": "https://github.com/mraxus/advent-of-code-2017/issues"
+  },
+  "homepage": "https://github.com/mraxus/advent-of-code-2017#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
