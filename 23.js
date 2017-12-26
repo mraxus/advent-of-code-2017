@@ -105,8 +105,7 @@ function timesMultiplied(input) {
   return processor.counts.mul
 }
 
-function getCompositeNumbers() {
-  const len = 123600
+function getCompositeNumbers(len) {
   let a = (new Array(len)).fill(false)
 
   for (let i = 2; i < len; i += 1) {
@@ -119,10 +118,11 @@ function getCompositeNumbers() {
   return a
 }
 
-function simpleAlg(compositeNumbers) {
+function simpleAlg() {
   let h = 0
   let b = 65 * 100 + 100000
   let c = b + 17000
+  const compositeNumbers = getCompositeNumbers(c + 1000)
 
   while (true) {
     if (compositeNumbers[b]) {
@@ -132,109 +132,11 @@ function simpleAlg(compositeNumbers) {
     b += 17
   }
 
-  // console.log('\nh:', h)
-  // console.log(`a: ${a}, b: ${b}, c: ${c}, d: ${d}, e: ${e}, f: ${f}, g: ${g}, h: ${h}\n\n`)
-
   return h
-}
-
-function crazyAlg() {
-  let d, e, f, g
-  let a=1
-  let b=65, c=65, h=0
-
-  if (a !== 0) {
-    b = 106500
-    c = 123500
-  }
-
-  do {
-    f = false	// line 08
-    d = 2
-
-    // console.log(`a: ${a}, b: ${b}, c: ${c}, d: ${d}, e: ${e}, f: ${f}, g: ${g}, h: ${h}`)
-    for (d = 2; d < b && !f; d += 1) {
-
-      e = b / d
-      if (Number.isInteger(e) && e > 1) {
-        f = true
-        break
-      }
-
-      // for (e = 2; e < b && !f; e += 1) {
-      //   if (d * e === b) {
-      //     f = true
-      //   } else if (d * e > b) break
-      // }
-    }
-
-    // do {
-    //   e = 2
-    //   do {
-    //     if (d * e === b) {
-    //       f = true
-    //       break
-    //     }
-    //     if (d * e > b) break
-    //     e = e + 1 // line 16
-    //   } while (e !== b) // line 19
-    //   if (f) { break }
-    //
-    //   d = d + 1
-    //  } while (d !== b) // line 23
-
-    if (f === true) {
-      h = h + 1
-    }
-    b += 17
-  } while (b <= c)
-
-  // console.log('\nh:', h)
-  // console.log(`a: ${a}, b: ${b}, c: ${c}, d: ${d}, e: ${e}, f: ${f}, g: ${g}, h: ${h}\n\n`)
-
-  return h
-}
-
-function valueOfH(input) {
-  const processor = setupProcessor(input, 1)
-  let ticks = 1e7
-
-  console.log('\n')
-  console.log(processor.registry)
-  console.log('\n')
-
-  while(execute(processor) && --ticks) {
-
-    if (processor.pos === 9) break
-    if (processor.pos === 19)
-    console.log('pos: ', processor.pos,
-      Object.keys(processor.registry)
-        .map(k => `${k}: ${processor.registry[k]}`)
-        .join(', ')
-    )
-  }
-
-  console.log(processor.registry)
-
-  return processor.registry.h
 }
 
 if (require.main === module) {
-  let h
-  console.time('simple')
-  h = simpleAlg(getCompositeNumbers())
-  console.timeEnd('simple')
-  console.log(`Result: ${h}`)
-
-  console.time('crazy')
-  h = crazyAlg()
-  console.timeEnd('crazy')
-  console.log(`Result: ${h}`)
 
   console.log('Part 1 (times multiplied):', timesMultiplied(input))
-  console.log('Part 2 (value of h):', h)
-}
-
-module.exports = {
-  timesMultiplied,
+  console.log('Part 2 (value of h):', simpleAlg())
 }
