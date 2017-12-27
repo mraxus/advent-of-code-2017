@@ -1,6 +1,7 @@
 # Advent of Code 2017
 
 [![Build status](https://img.shields.io/travis/mraxus/advent-of-code-2017/master.svg?style=flat-square)](https://travis-ci.org/mraxus/advent-of-code-2017)
+[![Coverage](https://img.shields.io/codecov/c/github/mraxus/advent-of-code-2017.svg?style=flat-square)](https://codecov.io/github/mraxus/advent-of-code-2017?branch=master)
 
 ## Most fun coding challenge 2017
 

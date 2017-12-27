@@ -4,4 +4,10 @@ node_js:
   - node
   - 9
 
+before_script:
+  - npm install codecov
+
+script:
+  - npm run ci:test
+
 sudo: false
