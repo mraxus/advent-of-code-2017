@@ -1,5 +1,9 @@
 # Advent of Code 2017
 
+[![Build status](https://img.shields.io/travis/mraxus/advent-of-code-2017/master.svg?style=flat-square)](https://travis-ci.org/mraxus/advent-of-code-2017)
+
+## Most fun coding challenge 2017
+
 A complete javascript solution to the epic adventure of http://adventofcode.com/2017
 
 
